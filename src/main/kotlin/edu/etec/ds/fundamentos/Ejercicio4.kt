@@ -1,6 +1,7 @@
 package edu.etec.ds.fundamentos
 
 fun evaluarPositivo(numero: Int): String {
+    val mensaje = if (numero > 0) "Positivo" else "No positivo"
     TODO("Retornar \"Positivo\" si numero > 0, sino \"No positivo\"")
 }
 
