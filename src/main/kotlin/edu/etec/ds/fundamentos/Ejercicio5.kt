@@ -1,6 +1,7 @@
 package edu.etec.ds.fundamentos
 
 fun sumarHasta(n: Int): Int {
+
     TODO("Sumar todos los numeros desde 1 hasta n (inclusive)")
 }
 
