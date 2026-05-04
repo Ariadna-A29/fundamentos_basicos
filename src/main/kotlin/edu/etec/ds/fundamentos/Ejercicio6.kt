@@ -11,7 +11,6 @@ fun obtenerDiaSemana(dia: Int): String {
         7 -> "Domingo"
         else -> "Dia invalido"
     }
-    TODO("Usar when para retornar el nombre del dia (1=Lunes, 7=Domingo)")
 }
 
 fun obtenerNombreMes(mes: Int): String {
@@ -60,8 +59,16 @@ fun convertirMoneda(moneda: String, monto: Double): Double {
 }
 
 fun realizarOperacion(operador: Char, a: Int, b: Int): Double {
-    TODO("Usar when para realizar + - * / %. Division por cero retorna 0.0")
-}
+    return when(operador){
+        '+' -> (a - b).toDouble()
+        '-' -> (a - b).toDouble()
+        '*' -> (a * b).toDouble()
+        '/' -> if (b != 0)a.toDouble() / b else 0.0
+        '%' -> if (b != 0)a.toDouble() / b else 0.0
+        else -> 0.0
+        }
+    }
+
 
 fun obtenerDescuentoWhen(monto: Double): Double {
     return when{
@@ -70,7 +77,6 @@ fun obtenerDescuentoWhen(monto: Double): Double {
         monto > 100 -> monto*0.10
         else -> 0.0
     }
-    TODO("Usar when como expresion: >200 -> 25%, >150 -> 15%, >100 -> 10%, else 0%")
 }
 
 fun obtenerCalificacion(nota: Int): String {
@@ -79,12 +85,11 @@ fun obtenerCalificacion(nota: Int): String {
         nota >=60 ->"Aprobado"
         else -> "Desaprobado"
     }
-    TODO("Usar when con rangos: >=90 Promocionado, >=60 Aprobado, else Desaprobado")
 }
 
 fun esVocal(caracter: Char): Boolean {
-    return carácter.lowercasseChar() in listOf('a','e','i','o','u')
-    TODO("Usar when para verificar si es vocal (a, e, i, o, u mayusculas y minusculas)")
+    val vocales = 'a';'e';'i';'o';'u'
+    return caracter.equals(vocales)
 }
 
 fun esPrimo(numero: Int): Boolean {
@@ -93,5 +98,4 @@ fun esPrimo(numero: Int): Boolean {
         if (numero % i == 0)return false
     }
     return true
-    TODO("Usar when para determinar si un numero es primo (mayor a 1 divisible solo por 1 y si mismo)")
 }

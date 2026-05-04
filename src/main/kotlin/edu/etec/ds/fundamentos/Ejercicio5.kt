@@ -3,7 +3,7 @@ package edu.etec.ds.fundamentos
 fun sumarHasta(norte: Int): Int {
     var suma = 0
     for (i in 1..norte){
-        suma +=¡
+        suma += norte
     }
     return suma
 }
@@ -33,7 +33,7 @@ fun fibonacci(norte: Int): Int {
 fun factorial(norte: Int): Int {
     var resultado = 1
     for (i in 1..norte){
-        resultado *=¡
+        resultado *= norte
     }
     return resultado
 }
@@ -50,8 +50,10 @@ fun encontrarMaximo(numeros: List<Int>): Int {
 
 fun encontrarMinimo(numeros: List<Int>): Int {
     var min = numeros[0]
-    for (i in numeros){
-        if (n < min) min = n
+    for (num in numeros) {
+        if (num > min) {
+            min = num
+        }
     }
     return min
 }
@@ -69,12 +71,8 @@ fun inverter(texto: String): String {
 }
 
 fun contarVocales(texto: String): Int {
-    var contador = 0
     val vocales ="aeiouAEIOU"
-    for(c in texto){
-        if (c in vocales)contador++
-    }
-    return contador
+    return texto.count { it in vocales }
 }
 
 fun esPalindromo(texto: String): Boolean {
@@ -83,10 +81,5 @@ fun esPalindromo(texto: String): Boolean {
 }
 
 fun tablaMultiplicar(numero: Int): List<Int> {
-    val lista = mutableListOf<Int>(
-        for (i in 1..10){
-            lista.add(numero*¡)
-        }
-        return lista
-    )
+    return (1..10).map { it * numero}
 }
