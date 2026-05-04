@@ -64,7 +64,7 @@ fun realizarOperacion(operador: Char, a: Int, b: Int): Double {
         '-' -> (a - b).toDouble()
         '*' -> (a * b).toDouble()
         '/' -> if (b != 0)a.toDouble() / b else 0.0
-        '%' -> if (b != 0)a.toDouble() / b else 0.0
+        '%' -> if (b != 0) (a % b ).toDouble()  else 0.0
         else -> 0.0
         }
     }
@@ -72,9 +72,9 @@ fun realizarOperacion(operador: Char, a: Int, b: Int): Double {
 
 fun obtenerDescuentoWhen(monto: Double): Double {
     return when{
-        monto > 200 -> monto*0.25
-        monto > 150 -> monto*0.15
-        monto > 100 -> monto*0.10
+        monto > 200 -> 25.00
+        monto > 150 -> 15.00
+        monto > 100 -> 10.00
         else -> 0.0
     }
 }
@@ -88,14 +88,15 @@ fun obtenerCalificacion(nota: Int): String {
 }
 
 fun esVocal(caracter: Char): Boolean {
-    val vocales = 'a';'e';'i';'o';'u'
-    return caracter.equals(vocales)
+    return caracter.lowercaseChar() in listOf('a','e', 'i', 'o', 'u')
 }
 
 fun esPrimo(numero: Int): Boolean {
-    if(numero <1)return false
+    if(numero < 2)return false
     for(i in 2 until numero){
-        if (numero % i == 0)return false
+        if (numero % i == 0) {
+            return false
+        }
     }
     return true
 }

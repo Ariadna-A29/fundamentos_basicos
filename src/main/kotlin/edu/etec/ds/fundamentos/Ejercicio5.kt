@@ -3,7 +3,7 @@ package edu.etec.ds.fundamentos
 fun sumarHasta(norte: Int): Int {
     var suma = 0
     for (i in 1..norte){
-        suma += norte
+        suma += i
     }
     return suma
 }
@@ -33,7 +33,7 @@ fun fibonacci(norte: Int): Int {
 fun factorial(norte: Int): Int {
     var resultado = 1
     for (i in 1..norte){
-        resultado *= norte
+        resultado *= i
     }
     return resultado
 }
@@ -50,9 +50,9 @@ fun encontrarMaximo(numeros: List<Int>): Int {
 
 fun encontrarMinimo(numeros: List<Int>): Int {
     var min = numeros[0]
-    for (num in numeros) {
-        if (num > min) {
-            min = num
+    for (n in numeros) {
+        if (n < min) {
+            min = n
         }
     }
     return min

@@ -22,9 +22,9 @@ fun evaluarEdad(edad: Int): String {
 
 fun obtenerDescuento(monto: Double): Double {
     return when{
-        monto >= 200 -> 0.30
-        monto >= 150 -> 0.20
-        monto >= 100 -> 0.10
+        monto >= 200 -> 30.00
+        monto >= 150 -> 20.00
+        monto >= 100 -> 10.00
         else -> 0.0
     }
 }
@@ -33,8 +33,10 @@ fun calcular(operador: Char, a: Int, b: Int): Double {
     return when(operador){
         '+' -> (a+b).toDouble()
         '-' -> (a-b).toDouble()
-        '*' -> (b-a).toDouble()
-        '/' -> (a/b).toDouble()
+        '*' -> (a*b).toDouble()
+        '/' -> {
+            if (b != 0)a.toDouble() / b else 0.0
+        }
         else -> 0.0
     }
 }
